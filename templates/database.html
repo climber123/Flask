@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div>
+        Task:
+        <a href="/">Home</a>
+    </div>
+    <hr>
+
+
+    <h1>{{data}}</h1>
+
+    {%for r in range(table_name|length)%}
+    <table border=1>
+            <thead><td>{{table_name[r]}}</td></thead>
+
+                <tr>
+                    {% for c in info[r] %}
+                    <td>{{c}}</td>
+                    {%endfor%}
+                </tr>
+
+    </table>
+    <br>
+    {%endfor%}
+
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        <p>
+            {{form.execute.label}}<br>
+            {{form.execute(size=32)}}
+        </p>
+
+        <p>
+            {{form.submit}}
+        </p>
+    </form>
+
+
+
+    {%if database%}
+    <table border=1>
+            <thead>
+
+
+
+            </thead>
+            {%for r in database%}
+                <tr>
+                    {%for i in r%}
+                    <td>{{i}}</td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+    </table>
+    {%endif%}
+
+</body>
+</html>

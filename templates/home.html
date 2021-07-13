@@ -1,0 +1,35 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Databases</h1>
+
+        <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.basename.label}}<br>
+            {{form.basename(size=32)}}
+
+            {{form.submit_del}}
+        </p>
+        </form>
+
+
+
+        <p>
+            <form action="/enter_new" method="GET">
+                <input type = "submit" value = "Add" />
+            </form>
+        </p>
+
+        <table border=1>
+            <thead><td>Список баз</td></thead>
+            {%for db in data%}
+                <tr>
+                    <td><a href="/choosen_db/{{db}}">{{db}}</a></td>
+                </tr>
+            {%endfor%}
+        </table>
+
+    </body>
+</html>

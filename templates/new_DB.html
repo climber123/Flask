@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div>
+        Task:
+        <a href="/">Home</a>
+    </div>
+    <hr>
+
+    <h1>Create a new DataBase</h1>
+
+
+    <form action="" method="POST">
+        {{form.hidden_tag()}}
+       <p>
+            {{form.basename.label}}<br>
+            {{form.basename(size=32)}}
+       </p>
+        <p>
+            {{form.execute.label}}<br>
+            {{form.execute(size=32)}}
+        </p>
+        <p>
+            {{form.submit}}
+        </p>
+    </form>
+</body>
+</html>
